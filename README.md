@@ -1,6 +1,6 @@
 # Sports-Club-Portal
 
-#### XtremeSports - A Sport Club Portal which provides players to play games and schedule matches and practice sessions with friends. Coaches can manage matches and practice sessions.
+#### XtremeSports - A Sports Club Portal which provides players to play games and schedule matches and practice sessions with friends. Coaches can manage matches and practice sessions.
 
 ## Features
 
@@ -8,6 +8,7 @@
 - Admin Dashboard to manage players, coaches and admins.
 - Coach Dashboard to manage matches and practice sessions.
 - Player Dashboard to play games and schedule matches with friends.
+- Ranking System for players to upgrade their rank by playing multiple matches.
 
 ## Tools
 
