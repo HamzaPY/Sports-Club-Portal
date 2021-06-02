@@ -1,0 +1,89 @@
+<ng-container *ngIf="coachDetails">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-md shadow-lg " style="height: 15vh; z-index: 10">
+      <span id="logo"><span id="X">X</span>treme<span id="X">S</span>ports</span>
+  
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav w-100">
+          <li class="nav-item active ml-auto mr-lg-4 h6 font-weight-bold">
+            <a class="nav-link" routerLink="/coach">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mr-lg-4 h6 font-weight-bold">
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Welcome <span id="name"> {{coachDetails.name}}</span></h1><br>
+        <h3 class="text-center">Unmarked Match Sessions</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Players list -->
+    <table class="table table-bordered" *ngIf="unmarkedPlayers.length > 0" style="margin-top: 60px;">
+      <thead class="table-primary" style="background-color: #00D8FF;">
+      <tr>
+        <th scope="col">Game</th>
+        <th scope="col">Player Id</th>
+        <th scope="col">Player Name</th>
+        <th scope="col">Opponent Id</th>
+        <th scope="col">Winning Status</th>
+        <th scope="col">Was Player Present?</th>
+        <th scope="col">Player Ranking</th>
+        <th scope="col">Save Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let player of unmarkedPlayers; let i = index">
+        <ng-container *ngFor="let session of player.progressInMatchSessions.matchSession; index as i">
+          <tr>
+            <td>{{session.gameType}}</td>
+            <td>{{player._id}}</td>
+            <td>{{player.name}}</td>
+            <td>{{session.opponent_id}}</td>
+            <td>
+              <select [(ngModel)]="session.winningStatus">
+                <option value="winner">Winner</option>
+                <option value="runner up">Runner Up</option>
+                <option value="unattended">Not Available</option>
+              </select>
+            </td>
+            <td>
+              <input type="checkbox" class="form-check-input" [(ngModel)]="session.played">
+            </td>
+            <td>
+              <select [(ngModel)]="player.ranking">
+                <option value="Beginner">Beginner</option>
+                <option value="Medium">Medium</option>
+                <option value="Advance">Advance</option>
+              </select>
+            </td>
+            <td>
+              <input type="checkbox" class="form-check-input" [(ngModel)]="session.marked">
+            </td>
+          </tr>
+        </ng-container>
+
+      </ng-container>
+      </tbody>
+    </table>
+    <div align="center">
+      <a  type="button" class="btn btn-primary btn-lg attendance" (click)="submit()" routerLink="/coach" style="margin-top: 30px;">Submit</a>
+    </div>
+
+  </div>
+  </body>
+</ng-container>
+<p align="center" *ngIf="!coachDetails">UnAuthorized Access</p>

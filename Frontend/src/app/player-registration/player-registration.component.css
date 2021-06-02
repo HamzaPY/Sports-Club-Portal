@@ -1,0 +1,9 @@
+.form-group label{
+  font-weight: bold;
+}
+.form-check-inline{
+  color: green;
+}
+#checkboxes.text-left{
+  color: darkblue;
+}

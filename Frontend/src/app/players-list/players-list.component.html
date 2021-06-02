@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md shadow-lg " style="height: 15vh; z-index: 10">
+    <span id="logo"><span id="X">X</span>treme<span id="X">S</span>ports</span>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav w-100">
+        <li class="nav-item active ml-auto mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <div class="jumbotron mt-5">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">Players</h1><br>
+      <hr>
+    </div>
+  </div>
+    <!-- Employee list -->
+    <div *ngIf="Employee.length <= 0"><p style="text-align: center; margin-top: 100px; font-size: 25px; color: #49bbfc;">There are no players added yet!</p></div>
+    <table class="table table-bordered" *ngIf="Employee.length > 0" style="margin-top: 60px;">
+      <thead class="table-primary" style="background-color: #00D8FF;">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Ranking</th>
+          <th scope="col">Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of Employee; let i = index">
+          <td>{{employee.name}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.ranking}}</td>
+          <td class="text-center edit-block">
+            <span class="edit">
+              <a type="button" routerLink="/playerEdit/{{employee._id}}" style="margin-right: 30px; text-decoration: none; color: white;" class="btn btn-success btn-sm">Edit</a>
+            </span>
+            <span class="delete">
+              <a type="button" (click)="removePlayer(employee, i)" style="text-decoration: none; color: white;" class="btn btn-danger btn-sm">Delete</a>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>

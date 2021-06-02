@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-md shadow-lg " style="height: 15vh; z-index: 10">
+      <span id="logo"><span id="X">X</span>treme<span id="X">S</span>ports</span>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav w-100">
+          <li class="nav-item active ml-auto mr-lg-4 h6 font-weight-bold">
+            <a class="nav-link" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item mr-lg-4 h6 font-weight-bold">
+            <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+          </li>
+        </div>
+      </div>
+    </nav>
+  </div>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-5">
+          <div class="col-sm-8 mx-auto">
+            <h1 class="text-center">Welcome <span id="name"> {{details.name}} </span></h1><br>
+            <h3 class="text-center">Admin Dashboard</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <a class="btn btn-primary btn-lg dashbutton" routerLink="/playerlist">Manage Players</a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-primary btn-lg dashbutton" routerLink="/coachlist">Manage Coaches</a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-primary btn-lg dashbutton" routerLink="/generateSchedule">Generate Schedule</a>
+          </div>
+        </div>
+      </div>
+    </body>

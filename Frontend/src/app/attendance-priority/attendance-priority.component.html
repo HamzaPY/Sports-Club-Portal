@@ -1,0 +1,40 @@
+<app-player-header></app-player-header>
+<body>
+<div class="container">
+  <div class="jumbotron mt-5">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">Welcome <span id="name"> {{details.name}} </span></h1><br>
+      <h3 class="text-center">Mark your Attendance</h3>
+    </div>
+  </div>
+  <div class="align-content-center" class="mt-sm-5">
+    <div align="center" class="align-content-center">
+      <button class="btn attendance" *ngIf="!isAttendanceMarked" (click)="markAttendance()">Mark Attendance</button>
+    </div>
+
+    <ng-container *ngIf="isAttendanceMarked">
+      <p style="color: #0197FF; text-align: center; font-size: 30px;">Attendance Successfully Marked</p>
+      <div class="row">
+        <div class="col-md-6 offset-md-4">
+          <ng-container *ngFor="let game of this.allGames; index as i" class="text-left">
+            <h5>Select Priority of {{game}}:</h5>
+              <select [(ngModel)]="newAttendance.gamePriority[i].priority">
+                <ng-container *ngFor="let j of this.allGames; index as a">
+                  <option [value]="a+1">{{a+1}}</option>
+                </ng-container>
+              </select>
+              <h5>Select Duration: </h5>
+              <select [(ngModel)]="newAttendance.gamePriority[i].Duration">
+                <option value="30" >30 minutes</option>
+                <option value="60">60 minutes</option>
+              </select>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+    <div align="center" class="align-content-center">
+    <button class="btn attendance" *ngIf="isAttendanceMarked" (click)="saveData()">Submit</button>
+    </div>
+  </div>
+</div>
+</body>

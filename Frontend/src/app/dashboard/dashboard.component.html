@@ -1,0 +1,38 @@
+<ng-container *ngIf="details">
+  <app-player-header></app-player-header>
+  <body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Welcome <span id="name"> {{details.name}} </span></h1><br>
+        <h3 class="text-center">Dashboard</h3>
+      </div>
+    </div>
+    <div class="row align-content-center" align="center">
+      <div class="col-md-4">
+        <a class="btn btn-primary btn-lg dashbutton animate__animated animate__slideInDown" routerLink="/attendance">Mark Attendance</a>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-primary btn-lg dashbutton animate__animated" routerLink="/profile" >Update Timings</a>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-primary btn-lg dashbutton animate__animated animate__slideInDown" routerLink="/customOpponent">Play with Friend</a>
+      </div>
+    </div>
+    <div class="row align-content-center" align="center">
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        <a class="btn btn-secondary btn-lg dashbutton2 animate__animated animate__bounceInLeft" routerLink="/practiceSchedule" >Practice Session Schedule</a>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <a class="btn btn-secondary btn-lg dashbutton2 animate__animated animate__bounceInRight" routerLink="/matchSchedule">Match Session Schedule</a>
+      </div>
+    </div>
+  </div>
+  </body>
+</ng-container>
+<p *ngIf="!details" align="center">
+  Un Authorized Access
+</p>
+

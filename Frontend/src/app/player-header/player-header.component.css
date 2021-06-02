@@ -1,0 +1,49 @@
+#logo{
+  font-size: 30px;
+  margin-left: 50px;
+  margin-bottom: 15px;
+  color: #01C5FF;
+}
+
+#X {
+  color: #0197FF;
+  font-size: 60px;
+}
+
+.nav-link {
+  color: #0197FF;
+  margin-top: 10px;
+}
+
+.nav-link:hover {
+  color: #01C5FF;
+}
+
+@media screen and (max-width: 600px ) {
+  #logo{
+    font-size: 4vw;
+  }
+  .nav-link:hover{
+    border:none;
+    color: green;
+  }
+  .navbar-collapse{
+    background: white;
+  }
+  a{
+    color: black;
+  }
+}
+@media screen and (min-width: 600px) {
+  a{
+    border: 2px solid transparent;
+    color: black;
+  }
+  a:hover{
+    border-bottom:2px solid steelblue;
+    color: #007bac;
+  }
+}
+
+
+

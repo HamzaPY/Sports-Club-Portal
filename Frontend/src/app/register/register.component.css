@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
+body {
+  font-family: 'Barlow';
+  background-image: linear-gradient(120deg,#006CFF,#00D8FF);
+}
+form {
+  margin: 50px auto 70px;
+  padding: 40px 40px 40px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  background-color: white;
+  box-shadow: 0 8px 10px 0 #006CFF, 0 8px 20px 0 #006CFF;
+}
+
+label {
+  color: #0197FF;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+  color: #0197FF;
+  margin-bottom: 30px;
+  border: 2px dotted #0197FF;
+  padding: 20px;
+}
+
+h2 span {
+  color: #0197FF;
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 30px;
+  color: #01C5FF;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #0197FF;
+}
+
+h4 {
+  text-align: center;
+  color: #0197FF;
+  font-weight: bold;
+}
+
+.form-control {
+  border: 1.5px solid #B8B8B8;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+#signup-btn, #login-btn{
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border: none;
+  background: linear-gradient(120deg,#006CFF,#00D8FF, #006CFF);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+  font-size: 20px;
+}
+
+#signup-btn:hover, #login-btn:hover{
+  background-position: right;
+}
+
+
+.ct, .cb, .ctt, .cs {
+  -webkit-appearance: none;
+  background-color: white;
+  border: 1.5px solid #B8B8B8;
+  border-radius: 3px;
+}
+
+.ct:hover {
+  background-image: linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),url("../../assets/tennis.png");
+}
+
+.ct:active, .ct:checked:active {
+  background-image: url("../../assets/tennis.png");
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: 5px;
+}
+
+.ct:checked, .ct:checked:after {
+  background-image: url("../../assets/tennis.png");
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: 5px;
+  border: 1.5px solid #0197FF;
+}
+
+.ct:checked:hover {
+  border: 1.5px solid #B8B8B8;
+}
+
+.cb:hover {
+  background-image: linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),url("../../assets/badminton.png");
+}
+
+.cb:active, .cb:checked:active {
+  background-image: url("../../assets/badminton.png");
+  background-repeat: no-repeat;
+  background-size: 34px;
+  background-position: 7px;
+}
+
+.cb:checked, .cb:checked:after {
+  background-image: url("../../assets/badminton.png");
+  background-repeat: no-repeat;
+  background-size: 34px;
+  background-position: 7px;
+  border: 1.5px solid #0197FF;
+}
+
+.cb:checked:hover {
+  border: 1.5px solid #B8B8B8;
+}
+
+.ctt:hover {
+  background-image: linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),url("../../assets/tabletennis.png");
+}
+
+.ctt:active, .ctt:checked:active {
+  background-image: url("../../assets/tabletennis.png");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 8px;
+}
+
+.ctt:checked, .ctt:checked:after {
+  background-image: url("../../assets/tabletennis.png");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 8px;
+  border: 1.5px solid #0197FF;
+}
+
+.ctt:checked:hover {
+  border: 1.5px solid #B8B8B8;
+}
+
+.cs:hover {
+  background-image: linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),url("../../assets/squash.png");
+}
+
+.cs:active, .cs:checked:active {
+  background-image: url("../../assets/squash.png");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 7px;
+}
+
+.cs:checked, .cs:checked:after {
+  background-image: url("../../assets/squash.png");
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: 7px;
+  border: 1.5px solid #0197FF;
+}
+
+.cs:checked:hover {
+  border: 1.5px solid #B8B8B8;
+}

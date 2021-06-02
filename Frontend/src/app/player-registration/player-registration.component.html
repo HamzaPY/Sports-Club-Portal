@@ -1,0 +1,148 @@
+<div class="container mt-2">
+  <h3 align="center">Registration Form</h3>
+  <div class="row ">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <form [formGroup]="signUp" class="mt-3">
+        <div class="form-group row">
+          <label class="col-md-4">First Name:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="fname" placeholder="First Name" formControlName="firstName" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4">Last Name:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="lastName" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4">Email:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4">Username:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="uname" placeholder="Username" formControlName="userName" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4">Password:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="pass" placeholder="Password" formControlName="password" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-4">Confirm Password:</label>
+          <div class="col-md-8 d-inline">
+            <input type="text" class="form-control" id="cpass" placeholder="Confirm Password" formControlName="confirmPassword" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+        </div>
+
+  <!--      CheckBoxes-->
+        <div align="center" class="animate__animated animate__slideInUp" id="checkboxes">
+          <label class="font-weight-bold">Select Games to Play and Your Skill Rank:</label><br>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" formControlName="tennis">
+            <label class="form-check-label col-sm-3 text-left">Tennis</label>
+            <div class="col-sm-4 d-inline">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Beginner" formControlName="tennisRank">
+                <label class="form-check-label">Beginner</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Medium" formControlName="tennisRank">
+                <label class="form-check-label">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Advance" formControlName="tennisRank">
+                <label class="form-check-label">Advance</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" formControlName="badminton">
+            <label class="form-check-label col-sm-3 text-left">Badminton</label>
+            <div class="d-inline col-sm-4">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Beginner" formControlName="badmintonRank">
+                <label class="form-check-label">Beginner</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Medium" formControlName="badmintonRank">
+                <label class="form-check-label">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Advance" formControlName="badmintonRank">
+                <label class="form-check-label">Advance</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-check ">
+            <input type="checkbox" class="form-check-input" formControlName="table_tennis">
+            <label class="form-check-label col-sm-3 text-left">Table Tennis</label>
+            <div class="d-inline col-sm-4">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Beginner" formControlName="table_tennisRank">
+                <label class="form-check-label">Beginner</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Medium" formControlName="table_tennisRank">
+                <label class="form-check-label">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Advance" formControlName="table_tennisRank">
+                <label class="form-check-label">Advance</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-check ">
+            <input type="checkbox" class="form-check-input" formControlName="squash">
+            <label class="form-check-label col-sm-3 text-left">Squash</label>
+            <div class="d-inline col-sm-4">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Beginner" formControlName="squashRank">
+                <label class="form-check-label">Beginner</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Medium" formControlName="squashRank">
+                <label class="form-check-label">Medium</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="Advance" formControlName="squashRank">
+                <label class="form-check-label">Advance</label>
+              </div>
+            </div>
+          </div>
+          <div align="center" class="mt-lg-5"><button type="submit" class="btn btn-primary text-center">Submit</button></div>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
+
+<p>{{signUp.value.email}}</p>
+
+

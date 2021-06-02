@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md shadow-lg " style="height: 15vh; z-index: 10">
+    <span id="logo"><span id="X">X</span>treme<span id="X">S</span>ports</span>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav w-100">
+        <li class="nav-item active ml-auto mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="form-horizontal">
+        <h2><span>X</span>treme<span>S</span>ports</h2><br>
+        <h3 class="text-center">Coach Registration</h3>
+        <form #f="ngForm" (ngSubmit)="f.form.valid && register()">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter your Name" [(ngModel)]="credentials.name" #name="ngModel"
+                   [ngClass] = "{'is-invalid': f.submitted && name.invalid }" required>
+            <div class="invalid-feedback" *ngIf="f.submitted && name.invalid">
+              <p *ngIf="name.errors.required">Name is required</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email"  #email="ngModel"
+                   [ngClass] = "{'is-invalid': f.submitted && email.invalid }" email required>
+            <div class="invalid-feedback" *ngIf="f.submitted && email.invalid">
+              <div *ngIf="email.errors.required">Email is required</div>
+              <div *ngIf="email.errors.email">Must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label >Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="credentials.password"  #password="ngModel"
+                   [ngClass] = "{'is-invalid': f.submitted && password.invalid }" minlength="8" required>
+            <div class="invalid-feedback" *ngIf="f.submitted && password.invalid">
+              <div *ngIf="password.errors.required">Password is required</div>
+              <div *ngIf="password.errors.minlength">Password should be at least 8 characters long</div>
+            </div>
+          </div>
+          <br>
+
+          <button type="submit" id="signup-btn" class="btn btn-lg btn-primary btn-block">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

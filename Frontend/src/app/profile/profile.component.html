@@ -1,0 +1,49 @@
+<ng-container *ngIf="details">
+  <app-player-header></app-player-header>
+  <body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Welcome <span id="name"> {{details.name}} </span></h1>
+      </div>
+    </div>
+    <div class="row" *ngIf="details.firstLogin">
+      <div class="col-md-6 offset-md-3">
+        <div class="form-horizontal">
+          <form #f="ngForm" (ngSubmit)="f.form.valid && editProfile()">
+            <div class="form-group">
+              <label>Please specify your daily/weekly timings</label>
+              <input type="time" class="form-control" name="dailyJoiningTime" value="8:30"  [(ngModel)]="details.dailyJoiningTime"  #dailyJoiningTime="ngModel"
+                     [ngClass] = "{'is-invalid': f.submitted && dailyJoiningTime.invalid }" required>
+              <div class="invalid-feedback" *ngIf="f.submitted && dailyJoiningTime.invalid">
+                <div *ngIf="dailyJoiningTime.errors.required">Club Timings is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Select the ranking level of opponent player</label>
+              <select id="oprank"  name="oprank" class="form-control"  [(ngModel)]="opponentRank"  #oprank="ngModel"
+                      [ngClass] = "{'is-invalid': f.submitted && oprank.invalid }" required>
+                <div class="invalid-feedback" *ngIf="f.submitted && oprank.invalid">
+                  <div *ngIf="oprank.errors.required">Opponent rank is required</div>
+                </div>
+                <option value="Beginner">Beginner</option>
+                <option value="Medium">Medium</option>
+                <option value="Advance">Advance-Level</option>
+              </select>
+            </div>
+            <br>
+
+            <button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!details.firstLogin && !details.isPresent" align="center">
+      <app-attendance-priority></app-attendance-priority>
+    </div>
+  </div>
+  </body>
+</ng-container>
+<p align="center" *ngIf="!details">
+  Unauthorized Access!
+</p>

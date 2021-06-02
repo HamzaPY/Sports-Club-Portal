@@ -1,0 +1,52 @@
+<ng-container *ngIf="details">
+  <app-player-header></app-player-header>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Dear <span style="font-size: 60px;"> {{details.name}}</span></h1>
+      </div>
+    </div>
+    <div align="center" class="align-content-center">
+      <h4>Your Current Level is <span class="text-success">{{details.ranking}}</span></h4>
+      <h6>You have played in
+        <span class="font-weight-bold">{{details.progressInPracticeSessions.nPracticeSessions}}</span>
+        Practice Sessions
+      </h6>
+      <h6>You have played in
+        <span class="font-weight-bold">{{details.progressInMatchSessions.nMatchSessions}}</span>
+        Match Sessions
+      </h6>
+
+      <p>
+        <button class="btn btn-primary dashbutton" style="margin-right: 40px;" id="b1" type="button" data-toggle="collapse" data-target="#duration" role="button" aria-expanded="false" aria-controls="duration">
+          Practice Sessions
+        </button>
+        <button class="btn btn-primary dashbutton" id="b2" type="button" data-toggle="collapse" data-target="#result" aria-expanded="false" aria-controls="result">
+          Matches
+        </button>
+      </p>
+      <div class="collapse" id="duration">
+        <ol class="list-group">
+                <ng-container *ngFor="let session of details.progressInPracticeSessions.practiceSession">
+                  <li>Played :<p class="text-success"> {{session.gameType}} vs {{session.opponentName}}</p> with duration
+                    <span class="font-weight-bold">{{calculate_duration(session.endTime,session.startTime)}}</span>
+                    minutes on {{session.startTime}}
+                  </li>
+                </ng-container>
+        </ol>
+      </div>
+      <div class="collapse" id="result">
+        <ol class="list-group">
+                <ng-container *ngFor="let session of details.progressInPracticeSessions.practiceSession">
+                  <li>Played :<p class="text-success"> {{session.gameType}} vs {{session.opponentName}}</p> with duration
+                    <span class="font-weight-bold">{{calculate_duration(session.endTime,session.startTime)}}</span>
+                    minutes on {{session.startTime}}
+                  </li>
+                </ng-container>
+        </ol>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<p align="center" class="mt-5" *ngIf="!details">Anauthorized Access!!!</p>

@@ -1,0 +1,45 @@
+
+<ng-container *ngIf="details">
+  <app-player-header></app-player-header>
+  <body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center">Welcome <span id="name"> {{details.name}}</span></h1><br>
+        <h3 class="text-center">Choose Your Friend to Play with</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container align-content-center">
+    <div class="form-group" align="center">
+      <div class="col-md-2">
+        <label class="form-check-label" style="color: #0197FF; text-align: center; font-size: 20px;">Choose Game:</label>
+      </div>
+      <select class="form-control-sm" [(ngModel)]="matchSchedule.gameType">
+        <ng-container *ngFor="let game of details.game">
+          <option class="dropdown-item" [value]="game.gameType">{{game.gameType}}</option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="form-group" align="center">
+      <div class="col-md-2">
+        <label class="form-check-label" style="color: #0197FF; text-align: center; font-size: 20px;">Select Opponent:</label>
+      </div>
+      <select class="form-control-sm" [(ngModel)]="oName">
+        <ng-container *ngFor="let player of onlinePlayers">
+          <ng-container *ngIf="player.name !== details.name">
+            <option class="dropdown-item"  [value]="player.name" >{{player.name}}</option>
+          </ng-container>
+        </ng-container>
+      </select>
+<!--      <input class="form-control-sm" type="email" [(ngModel)]="email" required>-->
+    </div>
+    <div class="align-content-center" align="center" >
+      <button class="btn attendance" (click)="editProfile()">Submit Request</button>
+    </div>
+  </div>
+  </body>
+</ng-container>
+<p *ngIf="!details" align="center">
+  UnAuthorized Access!
+</p>

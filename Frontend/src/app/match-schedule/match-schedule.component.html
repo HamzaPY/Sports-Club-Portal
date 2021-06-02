@@ -1,0 +1,53 @@
+<ng-container *ngIf="details">
+  <app-player-header></app-player-header>
+  <body>
+  <div class="container">
+    <div class="jumbotron mt-5">
+      <div class="col-sm-8 mx-auto">
+        <h1 class="text-center"> Hello <span class="font-weight-bold" style="font-size: 60px;">{{details.name}}</span></h1><br>
+        <h3 class="text-center">Your Match Sessions Schedule for Today!</h3>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- Players list -->
+    <table class="table table-bordered"  style="margin-top: 60px;">
+      <thead class="table-primary" style="background-color: #00D8FF;">
+      <tr>
+        <th scope="col">Game</th>
+        <th scope="col">Court</th>
+        <th scope="col">Coach</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">End Time</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Opponent Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-container *ngFor="let session of details.progressInMatchSessions.matchSession; index as i">
+        <ng-container *ngIf="calculateTime(session.startTime) <= 1">
+          <tr>
+            <td>{{session.gameType}}</td>
+            <td>{{session.court}}</td>
+            <td>{{session.coachName}}</td>
+            <td>{{session.startTime}}</td>
+            <td>
+              {{session.endTime}}
+            </td>
+            <td>
+              {{calculate_duration(session.startTime,session.endTime)}}
+            </td>
+            <td>
+              {{session.opponentName}}
+            </td>
+          </tr>
+        </ng-container>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+  </body>
+</ng-container>
+  <p *ngIf="!details" align="center">
+    UnAuthorized Access!
+  </p>

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md shadow-lg " style="height: 15vh; z-index: 10">
+    <span id="logo"><span id="X">X</span>treme<span id="X">S</span>ports</span>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav w-100">
+        <li class="nav-item active ml-auto mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" routerLink="/admin">Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-lg-4 h6 font-weight-bold">
+          <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+        </li>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container">
+    <div class="jumbotron mt-5">
+        <div class="col-sm-8 mx-auto">
+          <h1 class="text-center">Coaches</h1><br>
+          <hr>
+        </div>
+      </div>
+      <a type="button" class="btn btn-primary btn-lg attendance" routerLink="/coachRegister" style="margin-top: 10px; margin-bottom: -20px;">Add Coach</a>
+      <div *ngIf="Employee.length <= 0"><p style="text-align: center; margin-top: 50px; font-size: 25px; color: #49bbfc;">There are no coaches added yet!</p></div>
+    <table class="table table-bordered" *ngIf="Employee.length > 0" style="margin-top: 60px;">
+      <thead class="table-primary" style="background-color: #00D8FF;">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Role</th>
+          <th scope="col">Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of Employee; let i = index">
+          <td>{{employee.name}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.role}}</td>
+          <td class="text-center edit-block">
+            <span class="edit" style="margin-right: 40px;">
+              <a type="button" routerLink="/coachEdit/{{employee._id}}" style="margin-right: 10px; text-decoration: none; color: white;" class="btn btn-success btn-sm">Edit</a>
+            </span>
+            <span class="delete" (click)="removeCoach(employee, i)">
+              <button type="button" style="text-decoration: none; color: white;" class="btn btn-danger btn-sm">Delete</button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
