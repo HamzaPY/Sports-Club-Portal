@@ -12,10 +12,10 @@
 ## Tools
 
 - MEAN Stack
-  - Angular JS
-  - Node JS
-  - Express JS
-  - MongoDB
+  - Angular JS (Front-End)
+  - Node JS (Back-End)
+  - Express JS (Middleware)
+  - MongoDB (Database)
 
 ## Instructions to run the project
 
